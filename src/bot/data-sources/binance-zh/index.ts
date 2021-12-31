@@ -47,11 +47,11 @@ new class extends DataSourceWorker {
   }
 
   /**
-   * fetchData :
-   * Fetch the data from the source and perform some custom error management
+   * fetchAnnouncements :
+   * Fetch the announcements from the source and perform some custom error management
    * to allow handling properly those specific cases
    */
-  private async fetchData(): Promise<Response> {
+  private async fetchAnnouncements(): Promise<Response> {
     const response = await fetch(`${this.url}${getNumberInRange(10, 10)}`, {
       method: "GET",
       headers: { 'pragma': 'no-cache', 'Cache-Control': 'no-cache', cache: 'no-store' }
@@ -89,7 +89,7 @@ new class extends DataSourceWorker {
   async getSymbols(): Promise<SymbolAnnouncementDetails | null> {
     let response: Response
     try {
-      response = await this.fetchData()
+      response = await this.fetchAnnouncements()
     } catch (error) {
       // If age is to old abort
       if (error instanceof NetworkResponseExpiredError) return null
