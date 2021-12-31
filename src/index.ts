@@ -1,4 +1,4 @@
-import { CryptoAnnouncementsObserver } from "./bot";
+import { CryptoAnnouncementsObserver } from "./bot"
 
 // start the bot!
 CryptoAnnouncementsObserver.create()

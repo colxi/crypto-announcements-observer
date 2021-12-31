@@ -18,13 +18,38 @@ const WELCOME_MESSAGE = `
 export const config = {
   // message to print on screen on ob tinitialization
   botWelcomeMessage: WELCOME_MESSAGE,
-  // time betwen requests to configured sources
-  pollingInterval: 300,
+  // time between requests to configured sources
+  pollingInterval: 1000,
   // amount of price tracking checks to perform after a symbol is announced
   priceFollowTimes: 20,
-  // interval betwen price tracking checks after a symbol is announced
+  // interval between price tracking checks after a symbol is announced
   priceFollowInterval: 500,
   // announcement age limit
-  discardSignalsOlderThanMilis: 1000,
+  discardSignalsOlderThanMillis: 20000,
 }
 
+
+/**
+1:
+https://www.binancezh.com/bapi/composite/v1/public/cms/article/list/query?type=1&pageNo=1&pageSize=1
+
+2:
+https://www.binance.com/bapi/composite/v1/public/cms/article/list/query?type=1&pageNo=1&pageSize=1
+
+3:
+https://www.binancezh.jp/bapi/composite/v1/public/cms/article/list/query?type=1&pageNo=1&pageSize=1
+
+4:
+https://www.binancezh.com/gateway-api/v1/public/cms/article/list/query?type=1&catalogId=48&pageNo=1&pageSize=5
+
+5:
+https://www.binance.com/gateway-api/v1/public/cms/article/list/query?type=1&catalogId=48&pageNo=1&pageSize=5
+
+6:
+https://www.binancezh.jp/gateway-api/v1/public/cms/article/list/query?type=1&catalogId=48&pageNo=1&pageSize=5
+
+
+https://api.yshyqxx.com/gateway-api/v1/public/cms/article/list/query?type=1&catalogId=48&pageNo=1&pageSize=1
+
+https://api.yshyqxx.com/bapi/composite/v1/public/cms/article/list/query?type=1&pageNo=1&pageSize=5
+ */
